@@ -1,4 +1,5 @@
 def add(a: int, b: int) -> int:
+    print(f"[debug] adding {a} and {b}")
     return a + b
 
 
