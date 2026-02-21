@@ -53,7 +53,7 @@ Day3/
        ├─ __init__.py
        ├─ app.py
        └─ bad_style.py─ bad_style.py
-```
+
 
 
 - **`pyproject.toml`**: Project configuration and dependencies.
