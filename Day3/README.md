@@ -44,16 +44,17 @@ The focus of this day was on setting up a proper **Python development environmen
 ---
 
 ## Project Structure
-
 Day3/
 ├─ .gitignore
 ├─ README.md
 ├─ pyproject.toml
 ├─ .pre-commit-config.yaml
 └─ src/git_day_practice/
-       ├─ init.py
+       ├─ __init__.py
        ├─ app.py
-       └─ bad_style.py
+       └─ bad_style.py─ bad_style.py
+```
+
 
 
 - **`pyproject.toml`**: Project configuration and dependencies.
@@ -70,12 +71,12 @@ Day3/
 
 2. Install the package with development dependencies:
 
-python -m pip install -e ".[dev]"
+   python -m pip install -e ".[dev]"
 
 3. Run ruff and pre-commit to ensure code quality:
 
-ruff check .
-pre-commit run --all-files
+   ruff check .
+   pre-commit run --all-files
 
 ## Notes
 
