@@ -44,16 +44,16 @@ The focus of this day was on setting up a proper **Python development environmen
 ---
 
 ## Project Structure
-
 Day3/
 ├─ .gitignore
 ├─ README.md
 ├─ pyproject.toml
 ├─ .pre-commit-config.yaml
 └─ src/git_day_practice/
-       ├─ init.py
+       ├─ __init__.py
        ├─ app.py
-       └─ bad_style.py
+       └─ bad_style.py─ bad_style.py
+```
 
 
 - **`pyproject.toml`**: Project configuration and dependencies.
@@ -82,3 +82,5 @@ pre-commit run --all-files
 - This setup ensures consistent code quality across the project.
 
 - Pre-commit hooks automatically fix formatting issues such as trailing whitespace and end-of-file newlines.
+
+
