@@ -56,6 +56,7 @@ Day3/
 
 
 
+
 - **`pyproject.toml`**: Project configuration and dependencies.
 - **`.pre-commit-config.yaml`**: Pre-commit hooks configuration.
 - **`src/git_day_practice/`**: Source code for Day 3 exercises.
@@ -70,17 +71,16 @@ Day3/
 
 2. Install the package with development dependencies:
 
-python -m pip install -e ".[dev]"
+   python -m pip install -e ".[dev]"
 
 3. Run ruff and pre-commit to ensure code quality:
 
-ruff check .
-pre-commit run --all-files
+   ruff check .
+   pre-commit run --all-files
 
 ## Notes
 
 - This setup ensures consistent code quality across the project.
 
 - Pre-commit hooks automatically fix formatting issues such as trailing whitespace and end-of-file newlines.
-
-
+There are no n
