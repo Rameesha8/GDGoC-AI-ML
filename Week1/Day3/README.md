@@ -53,7 +53,7 @@ Day3/
        ├─ __init__.py
        ├─ app.py
        └─ bad_style.py─ bad_style.py
-```
+
 
 
 
@@ -83,3 +83,4 @@ Day3/
 - This setup ensures consistent code quality across the project.
 
 - Pre-commit hooks automatically fix formatting issues such as trailing whitespace and end-of-file newlines.
+There are no n
