@@ -1,1 +1,43 @@
+# ----------------------
+# Python
+# ----------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pycache/
+*.pkl
+*.env
+.env.*
+*.sqlite3
+
+# ----------------------
+# Virtual environment
+# ----------------------
 .venv/
+venv/
+ENV/
+env/
+
+# ----------------------
+# OS / Editor
+# ----------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.log
+
+# ----------------------
+# Jupyter / IPython
+# ----------------------
+.ipynb_checkpoints/
+
+# ----------------------
+# FastAPI / project-specific
+# ----------------------
+# Local secret templates (but safe to commit .env.example)
+.env.local
+.env.test
