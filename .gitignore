@@ -18,6 +18,7 @@ __pycache__/
 venv/
 ENV/
 env/
+Week2/Day8/docker.env
 
 # ----------------------
 # OS / Editor
