@@ -49,3 +49,7 @@ Thumbs.db
 # ----------------------
 *.egg-info/
 *.dist-info/
+
+
+
+.env.compose

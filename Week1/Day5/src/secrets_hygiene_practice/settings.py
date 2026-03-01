@@ -7,6 +7,10 @@ from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
+database_url: str = Field(..., validation_alias="DATABASE_URL")
+qdrant_url: str = Field(..., validation_alias="QDRANT_URL")
+
+
 class Settings(BaseSettings):
     """
     Central configuration object.
@@ -34,6 +38,9 @@ class Settings(BaseSettings):
 
     # Example secret. In real projects, treat this as sensitive.
     api_key: str = Field(..., validation_alias="API_KEY")
+
+    database_url: str
+    qdrant_url: str
 
     # Comma-separated list in .env -> parsed into list[str]
     allowed_origins_raw: str = Field(default="", validation_alias="ALLOWED_ORIGINS")

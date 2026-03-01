@@ -5,6 +5,8 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from secrets_hygiene_practice.settings import get_settings
+import psycopg
+from qdrant_client import QdrantClient
 
 settings = get_settings()
 app = FastAPI(title=settings.app_name)
@@ -127,3 +129,27 @@ async def secure_data(x_api_key: str | None = Header(default=None)):
     if x_api_key != s.api_key:
         raise HTTPException(status_code=401, detail="Invalid API key")
     return {"secret_data": "approved"}
+
+
+@app.get("/db/health")
+async def db_health():
+    s = get_settings()
+    try:
+        with psycopg.connect(s.database_url) as conn:
+            with conn.cursor() as cur:
+                cur.execute("SELECT 1;")
+                _ = cur.fetchone()
+        return {"postgres": "ok"}
+    except Exception as e:
+        raise HTTPException(status_code=503, detail=f"postgres not ready: {e}")
+
+
+@app.get("/qdrant/health")
+async def qdrant_health():
+    s = get_settings()
+    try:
+        client = QdrantClient(url=s.qdrant_url)
+        _ = client.get_collections()
+        return {"qdrant": "ok"}
+    except Exception as e:
+        raise HTTPException(status_code=503, detail=f"qdrant not ready: {e}")

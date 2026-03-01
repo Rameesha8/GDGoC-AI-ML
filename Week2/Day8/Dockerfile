@@ -1,4 +1,3 @@
-# Week2/Day8/Dockerfile
 FROM python:3.11-slim
 
 # Good defaults
@@ -8,12 +7,13 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-# Copy only the src folder from Week1/Day5
+# Copy src folder from repo root
 COPY Week1/Day5/src /app/src
 
 # Install dependencies
 RUN python -m pip install --upgrade pip \
-    && python -m pip install "fastapi[standard]" pydantic-settings
+    && python -m pip install "fastapi[standard]" pydantic-settings \
+       "psycopg[binary]" qdrant-client
 
 EXPOSE 8000
 
