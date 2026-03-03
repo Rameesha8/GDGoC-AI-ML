@@ -1,21 +1,22 @@
 FROM python:3.11-slim
 
-# Good defaults
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PYTHONPATH=/app/src
-
 WORKDIR /app
 
-# Copy src folder from repo root
-COPY Week1/Day5/src /app/src
+# Copy Day10 source code
+COPY Week2/Day10/src /app/src
 
-# Install dependencies
-RUN python -m pip install --upgrade pip \
-    && python -m pip install "fastapi[standard]" pydantic-settings \
-       "psycopg[binary]" qdrant-client
+# Upgrade pip and install dependencies
+RUN python -m pip install --upgrade pip && python -m pip install \
+    "fastapi[standard]" \
+    pydantic-settings \
+    "psycopg[binary]" \
+    sqlalchemy \
+    alembic \
+    qdrant-client
+RUN apt-get update && apt-get install -y gcc libpq-dev
+RUN python -m pip install --upgrade pip
+RUN python -m pip install sqlalchemy psycopg2-binary alembic
 
-EXPOSE 8000
-
-# Run the FastAPI app
-CMD ["uvicorn", "secrets_hygiene_practice.api:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start FastAPI
+ENV PYTHONPATH=/app/Week2/Day10/src
+CMD ["uvicorn", "Week2.Day10.src.secrets_hygiene_practice.api:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
