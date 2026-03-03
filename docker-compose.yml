@@ -27,6 +27,8 @@ services:
     build:
       context: .
       dockerfile: Week2/Day8/Dockerfile
+    volumes:
+      - .:/app   # mount project to container
     env_file:
       - .env.compose
     environment:
