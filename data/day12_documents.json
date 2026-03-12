@@ -1,0 +1,37 @@
+[
+  {
+    "id": "doc-001",
+    "text": "FastAPI is a modern Python framework for building APIs.",
+    "language": "en",
+    "category": "backend",
+    "source": "notes"
+  },
+  {
+    "id": "doc-002",
+    "text": "ڈاکر ایپلیکیشنز کو مختلف ماحول میں چلانے میں مدد دیتا ہے۔",
+    "language": "ur",
+    "category": "devops",
+    "source": "notes"
+  },
+  {
+    "id": "doc-003",
+    "text": "Postgres is a relational database commonly used with APIs.",
+    "language": "en",
+    "category": "database",
+    "source": "notes"
+  },
+  {
+    "id": "doc-004",
+    "text": "Qdrant stores vectors and metadata for semantic search.",
+    "language": "en",
+    "category": "search",
+    "source": "notes"
+  },
+  {
+    "id": "doc-005",
+    "text": "ملٹی لنگول ایمبیڈنگز مختلف زبانوں کے متن کو ایک ہی ویکٹر اسپیس میں نقش کر سکتی ہیں۔",
+    "language": "ur",
+    "category": "search",
+    "source": "notes"
+  }
+]
